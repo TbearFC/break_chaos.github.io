@@ -15,6 +15,25 @@ done by design, to save memory.**
 
 ****
 
+##构造模型
+
+逻辑回归模型
+
+	import torch
+	import torch.nn as nn
+	import torch.nn.functional as func
+
+	class LogisticModel(nn.Module):
+	    def __init__(self, in_dim, out_dim):
+	        super(LogisticModel, self).__init__()
+	        self.linear = nn.Linear(in_dim, out_dim)
+	        
+	    def forward(self,x):
+	        out = func.sigmoid(self.linear(x))
+	        return out
+	in_dim, out_dim =1,1    
+	model = LogisticModel(1, 1)
+
 
 
 
