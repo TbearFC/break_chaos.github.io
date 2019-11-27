@@ -34,6 +34,9 @@ done by design, to save memory.**
 	in_dim, out_dim =1,1    
 	model = LogisticModel(1, 1)
 
+继承torch.nn.Module类，重构初始化函数（用来确定输入，输出的tensor大小）和forward函数。
+
+
 
 
 
