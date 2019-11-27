@@ -1,6 +1,6 @@
-#torch重点相关概念
-##autograd相关
-###grad属性 
+# torch重点相关概念
+## autograd相关
+### grad属性 
 官方文档提到的grad相关
 >This attribute is **None** by default and becomes a Tensor the first time a call to backward() computes gradients for self. The attribute will then contain the gradients computed and future calls to backward() will accumulate (add) gradients into it.
 
@@ -15,7 +15,7 @@ done by design, to save memory.**
 
 ****
 
-##构造模型
+## 构造模型
 
 逻辑回归模型
 
