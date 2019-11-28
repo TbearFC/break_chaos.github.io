@@ -1,4 +1,4 @@
-* [简介](/)
+* [目录](/)
 * 笔记
     * [how2code](blog/how2code/how2code.md)
 * pytorch相关
