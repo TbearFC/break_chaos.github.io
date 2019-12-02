@@ -1,7 +1,9 @@
 * [目录](/)
-* 笔记
-    * [how2code](blog/how2code/how2code.md)
+* 方法论
+    * [编程之路](blog/how2code/how2code.md)
 * pytorch相关
-    * [autograd](blog/pytorch/torch基础.md)
-    * [扒一扒nn.module的源码](blog/pytorh/Module详解.md)
-
+    * [pytorch基础](blog/pytorch/torch基础.md)
+    * [pytorch工作流](blog/pytorch/pytorch工作流.md)
+    * [扒一扒nn.module的源码](blog/pytorch/Module详解.md)
+    * [实例1：线性回归](blog/pytorch/线性回归.md)
+    * [有关pytorch的tips](blog/pytorch/tips_about_torch.md)
