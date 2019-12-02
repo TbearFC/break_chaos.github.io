@@ -38,7 +38,14 @@
         self._load_state_dict_pre_hooks = OrderedDict()
         self._modules = OrderedDict()
         
-   
+
+_parameters：字典，保存用户直接设置的parameter，self.param1 = nn.Parameter(t.randn(3, 3))会被检测到，在字典中加入一个key为'param'，value为对应parameter的item。而self.submodule = nn.Linear(3, 4)中的parameter则不会存于此。
+_modules：子module，通过self.submodel = nn.Linear(3, 4)指定的子module会保存于此。
+_buffers：缓存。如batchnorm使用momentum机制，每次前向传播需用到上一次前向传播的结果。
+_backward_hooks与_forward_hooks：钩子技术，用来提取中间变量，类似variable的hook。
+training：BatchNorm与Dropout层在训练阶段和测试阶段中采取的策略不同，通过判断training值来决定前向传播策略。
+上述几个属性中，_parameters、_modules和_buffers这三个字典中的键值，都可以通过self.key方式获得，效果等价于self._parameters['key'].
+
 这8个字典用于网络的前向、反向、序列化、反序列化中。
 
 因此，当实例化你定义的Net(nn.Module的子类)时，要确保父类的构造函数首先被调用，这样才能确保上述8个OrderedDict被create出来，否则，后续任何的初始化操作将抛出类似这样的异常：cannot assign module before Module.__init__() call。
