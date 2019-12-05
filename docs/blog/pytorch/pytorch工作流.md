@@ -28,6 +28,13 @@ for images, labels in train_loader:
     pass
 
 
+### 使用pandas作为数据源
+
+
+出现RuntimeError: Expected object of scalar type Double but got scalar type Float for argument #2 'mat2'
+
+但是修改了images=images.float()即可
+
 
 ## 模型的保存
 
