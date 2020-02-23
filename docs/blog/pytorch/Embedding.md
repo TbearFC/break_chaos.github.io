@@ -1,0 +1,3 @@
+# Embedding
+
+embedding主要是为了把向量压缩到指定的长度；常用的embedding方法有word2vec，而word2vec中常用的是skip2gram
